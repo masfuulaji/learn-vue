@@ -1,7 +1,13 @@
 <template>
   <h1>{{ title }}</h1>
   <div v-if="showModal">
-    <Modal :header="header" :text="text" theme="book" @close="toggleModal"/>
+    <Modal theme="book" @close="toggleModal">
+      <template v-slot:type>
+        <span>Manifesto</span>
+      </template>
+      <h3>Who Am I</h3>
+      <p>Industrial society and its future</p>
+    </Modal>
   </div>
   <button @click="toggleModal">Just Click it</button>
 </template>
@@ -17,8 +23,6 @@ export default {
   data() {
     return {
       title: "My App D:",
-      header: "Who Am I",
-      text: "industrial society and its future",
       showModal: false,
     };
   },
