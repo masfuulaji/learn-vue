@@ -1,36 +1,12 @@
 <template>
-  <h1>Reaction Timer</h1>
-  <button @click="start" :disabled="isPlaying">Click it</button>
-  <Block v-if="isPlaying" :delay="delay" @end="endGame" />
-  <Result v-if="showResult" :score="score" />
+  <SignupForm />
 </template>
 
 <script>
-import Block from "./components/Block.vue";
-import Result from "./components/Result.vue";
+import SignupForm from "./components/SignupForm.vue";
 export default {
   name: "App",
-  components: { Block, Result },
-  data() {
-    return {
-      isPlaying: false,
-      delay: null,
-      score: null,
-      showResult: false,
-    };
-  },
-  methods: {
-    start() {
-      this.delay = 2000 + Math.random() * 5000;
-      this.isPlaying = true;
-      this.showResult = false;
-    },
-    endGame(val) {
-      this.score = val;
-      this.isPlaying = false;
-      this.showResult = true;
-    },
-  },
+  components: { SignupForm },
 };
 </script>
 
@@ -43,20 +19,8 @@ export default {
   color: #444;
   margin-top: 60px;
 }
-
-button {
-  background: #0faf87;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  font-size: 16px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  margin: 10px;
-}
-button[disabled] {
-  opacity: 0.2;
-  cursor: not-allowed;
+body {
+  margin: 0;
+  background: #eee;
 }
 </style>
