@@ -1,0 +1,7 @@
+{
+    "jobs":[
+        { "title": "Manusia UX", "id": 1, "details": "lorem" },
+        { "title": "Manusia Web", "id": 2, "details": "lorem" },
+        { "title": "Manusia Mobile", "id": 3, "details": "lorem" }
+    ]
+}
